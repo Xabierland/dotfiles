@@ -3,5 +3,11 @@
 
 ## INDEX
 1. Instalacion de Arch Linux
-2. 
-3.
+2. Instalacion de paquetes
+3. Configuracion del entorno
+
+## INSTALACION DE ARCH LINUX
+
+## INSTALACION DE PAQUETES
+
+## CONFIGURACION DEL ENTORNO
