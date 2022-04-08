@@ -1,6 +1,4 @@
 # arch-config
-
-
 ```Este repositorio se encuentra bajo construccion.```
 
 ## INDEX
