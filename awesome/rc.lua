@@ -52,5 +52,5 @@ collectgarbage("setpause", 110)
 collectgarbage("setstepmul", 1000)
 
 -- Wallpaper
-local wallpaper_cmd="feh --bg-fill /home/xabierland/Pictures/fondo.jpg"
+local wallpaper_cmd="feh --bg-fill ~/.config/awesome/theme/assets/bg.jpg"
 os.execute(wallpaper_cmd)
