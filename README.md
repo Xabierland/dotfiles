@@ -95,6 +95,7 @@
 #%wheel ALL=(ALL:ALL) ALL
 ||
 \/
+##Uncoment to allow members of group wheel to execute any command
 %wheel ALL=(ALL:ALL) ALL
 ```
 </ol>
