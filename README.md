@@ -45,8 +45,6 @@
 <ol>
 
 ```root@archiso ~ # mkdir /mnt/boot```
-</ol>
-<ol>
 
 ```root@archiso ~ # mount /dev/sda1 /mnt/boot```
 </ol>
@@ -80,7 +78,30 @@
 <ol>
 
 ```[root@archiso /]# useradd -m user```
+
+```[root@archiso /]# passwd user```
+
+```[root@archiso /]# usermod -aG wheel user```
 </ol>
+<li>Configurar sudo</li>
+<ol>
+
+```[root@archiso /]# pacman -S sudo```
+
+```[root@archiso /]# nano /etc/sudoers```
+
+```BASH
+##Uncoment to allow members of group wheel to execute any command
+#%wheel ALL=(ALL:ALL) ALL
+||
+\/
+%wheel ALL=(ALL:ALL) ALL
+```
+</ol>
+<li>Configurar regiones</li>
+<ol>
+
+```[root@archiso /]# nano /etc/locale.gen```
 </ol>
 </ol>
 
