@@ -79,12 +79,13 @@ En caso de teclado español: *root@archiso ~ # loadkeys es*
 </ol>
 <li>Configurar usuario</li>
 <ol>
+Cambiar $user por el nombre del usuario. ($ no incluido)
 
-```[root@archiso /]# useradd -m user```
+```[root@archiso /]# useradd -m $user```
 
-```[root@archiso /]# passwd user```
+```[root@archiso /]# passwd $user```
 
-```[root@archiso /]# usermod -aG wheel user```
+```[root@archiso /]# usermod -aG wheel $user```
 </ol>
 <li>Configurar sudo</li>
 <ol>
