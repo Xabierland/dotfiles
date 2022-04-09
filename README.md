@@ -6,6 +6,8 @@
 
 ## INSTALACION DE ARCH LINUX
 *¡¡No reiniciar hasta terminar todo el apartado!!*
+
+En caso de teclado español: *root@archiso ~ # loadkeys es*
 <ol>
 <li>Definir particiones</li>
 <ol>
@@ -104,7 +106,61 @@
 <ol>
 
 ```[root@archiso /]# nano /etc/locale.gen```
+```BASH
+#en_SG ISO-8859-1
+#en_US.UTF-8 UTF-8
+#en_US.UTF-8 UTF-8
+||
+\/
+#en_SG ISO-8859-1
+en_US.UTF-8 UTF-8
+#en_US.UTF-8 UTF-8
+```
+```BASH
+#es_EC ISO-8859-1
+#es_ES.UTF-8 UTF-8
+#es_ES ISO-8859-1
+||
+\/
+#es_EC ISO-8859-1
+es_ES.UTF-8 UTF-8
+#es_ES ISO-8859-1
+```
+```[root@archiso /]# locale-gen```
+
+```[root@archiso /]# nano /etc/vconsole.conf```
+```BASH
+KEYMAP=es
+```
 </ol>
+<li>Configurar bootloader</li>
+<ol>
+
+```[root@archiso /]# grub-install /dev/sda```
+
+```[root@archiso /]# grub-mkconfig -o /boot/grub/grub.cfg```
+</ol>
+<li>Configurar hostname</li>
+<ol>
+Cambiar $name por el nombre del ordenador. ($ no incluido)
+
+```[root@archiso /]# echo $name > /etc/hostname```
+
+```[root@archiso /]# nano /etc/hosts```
+```BASH
+# Static table lookup for hostnames.
+# See hosts(5) for details.
+
+127.0.0.1   localhost
+::1         localhost
+127.0.0.1   $name.localhost $name
+```
+</ol>
+<li> Configurar daemons </li>
+
+```[root@archiso /]# systemctl enable NetworkManager.service```
+
+```[root@archiso /]# systemctl enable wpa_supplicant.service```
 </ol>
 
 
