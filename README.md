@@ -71,9 +71,15 @@
 
 ```root@archiso ~ # arch-chroot /mnt```
 </ol>
-<li>Entramos al sistema</li>
+<li>Configurar contraseña para root</li>
 <ol>
 
+```[root@archiso /]# passwd```
+</ol>
+<li>Configurar usuario</li>
+<ol>
+
+```[root@archiso /]# useradd -m user```
 </ol>
 </ol>
 </ol>
