@@ -5,6 +5,7 @@
 ## INDEX
 
 ## INSTALACION DE ARCH LINUX
+*¡¡No reiniciar hasta terminar todo el apartado!!*
 <ol>
 <li>Definir particiones</li>
 <ol>
