@@ -1,6 +1,6 @@
 # arch-config
 
-```Este repositorio se encuentra bajo construccion.```
+```Este repositorio se encuentra bajo construccion ;)```
 
 ## INDEX
 
@@ -54,6 +54,26 @@
 <ol>
 
 ```root@archiso ~ # mount /dev/sda1 /mnt```
+</ol>
+</ol>
+<li>Instalamos el kernel y otros complementos</li>
+<ol>
+
+```root@archiso ~ # pacstrap /mnt linux linux-firmware networkmanager grub wpa_supplicant base base-devel ```
+</ol>
+<li>Generamos el fstab</li>
+<ol>
+
+```root@archiso ~ # genfstab -U /mnt > /mnt/etc/fstab```
+</ol>
+<li>Entramos al sistema</li>
+<ol>
+
+```root@archiso ~ # arch-chroot /mnt```
+</ol>
+<li>Entramos al sistema</li>
+<ol>
+
 </ol>
 </ol>
 </ol>
