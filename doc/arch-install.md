@@ -1,7 +1,5 @@
 # Install Arch Linux
 
-## INDEX
-
 ## INSTALACION DE ARCH LINUX
 
 *¡¡No reiniciar hasta terminar todo el apartado!!*
