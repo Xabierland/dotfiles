@@ -1,6 +1,7 @@
-# INSTALACION DE ARCH LINUX
+# Instalacion de Arch Linux
 
-## MANUAL
+## Instalacion manual
+
 *¡¡No reiniciar hasta terminar todo el apartado!!*
 
 En caso de teclado español:
@@ -125,4 +126,26 @@ echo "127.0.0.1   $hostname.localhost $hostname" >> /etc/hosts
 ```bash
 systemctl enable NetworkManager.service
 systemctl enable wpa_supplicant.service
+```
+
+## Instalacion automatica
+
+En caso de teclado español:
+
+```bash
+loadkeys es
+```
+
+1. Actualizar paquetes
+
+```bash
+pacman -Sy
+pacman-key --init
+pacman -S archinstall
+```
+
+2. Empezar instalacion
+
+```bash
+archinstall
 ```
