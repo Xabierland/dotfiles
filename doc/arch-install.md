@@ -1,7 +1,6 @@
-# Install Arch Linux
+# INSTALACION DE ARCH LINUX
 
-## INSTALACION DE ARCH LINUX
-
+## MANUAL
 *¡¡No reiniciar hasta terminar todo el apartado!!*
 
 En caso de teclado español:
