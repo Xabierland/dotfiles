@@ -3,6 +3,7 @@
 ## INDEX
 
 ## INSTALACION DE ARCH LINUX
+
 *¡¡No reiniciar hasta terminar todo el apartado!!*
 
 En caso de teclado español:
@@ -87,16 +88,7 @@ pacman -S sudo
 ```
 
 ```bash
-nano /etc/sudoers
-```
-
-```bash
-##Uncoment to allow members of group wheel to execute any command
-#%wheel ALL=(ALL:ALL) ALL
-||
-\/
-##Uncoment to allow members of group wheel to execute any command
-%wheel ALL=(ALL:ALL) ALL
+echo "%wheel ALL=(ALL:ALL) ALL" >> /etc/sudoers
 ```
 
 11. Configurar regiones
@@ -123,19 +115,12 @@ grub-mkconfig -o /boot/grub/grub.cfg
 13. Configurar hostname
 
 ```bash
-$hostname = "arch"
+hostname="arch"
 echo $hostname > /etc/hostname
-```
 
-```nano /etc/hosts```
-
-```bash
-# Static table lookup for hostnames.
-# See hosts(5) for details.
-
-127.0.0.1   localhost
-::1         localhost
-127.0.0.1   $name.localhost $name
+echo "127.0.0.1   localhost" > /etc/hosts
+echo "::1         localhost" >> /etc/hosts
+echo "127.0.0.1   $hostname.localhost $hostname" >> /etc/hosts
 ```
 
 14. Configurar daemons
