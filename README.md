@@ -1,16 +1,25 @@
 # arch-dotfiles
 
-```Este repositorio se encuentra bajo construccion ;)```
+> [!WARNING]
+> Este repositorio se encuentra bajo construccion
 
-## SUMMARY
+## Instalacion
 
-| Programa | Nombre |
-| :--- | :--- |
-| OS | Arch Linux |
-| Terminal | kitty |
+Hay un readme en cada carpeta con los pasos a seguir para instalar cada programa
+
+## Mis programas
+
+En este repositorio se encuentran configuraciones que ya no uso, pero que pueden ser utiles para alguien mas
+
+Los que yo uso actualmente son los siguientes:
+
+| Tipo | Nombre |
+| --- | --- |
+| OS | Artix Linux |
+| DE | Cinnamon |
+| Terminal | Alacritty |
 | Shell | Zsh |
-| WM | Hyprland |
-| Editor | Neovim/Lazyvim |
-| Browser | Links |
-| File Manager | Ranger |
-| Music Player | Moc |
+| Editor | Lazyvim |
+| Browser | LibreWolf / Links |
+| File Manager | Nemo / Ranger |
+
