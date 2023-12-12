@@ -1,0 +1,16 @@
+[shell]
+program = "/usr/bin/zsh"
+
+[font]
+size = 14.0
+
+[font.normal]
+family = "Hack Nerd Font"
+
+[colors.primary]
+background = "#000000"
+foreground = "#00ff00"
+
+[colors.cursor]
+text = "CellBackground"
+cursor = "CellForeground"
