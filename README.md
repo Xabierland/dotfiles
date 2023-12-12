@@ -1,11 +1,11 @@
 # arch-dotfiles
 
-> [!WARNING]
+> [!CAUTION]
 > Este repositorio se encuentra bajo construccion
 
 ## Instalacion
 
-Hay un readme en cada carpeta con los pasos a seguir para instalar cada programa
+Hay un readme en cada carpeta con los pasos a seguir para instalar cada programa y configuracion
 
 ## Mis programas
 
