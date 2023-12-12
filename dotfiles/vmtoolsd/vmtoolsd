@@ -1,0 +1,4 @@
+#!/sbin/openrc-run
+command="/usr/sbin/vmtoolsd"
+pidfile="/run/${RC_SVCNAME}.pid"
+command_args="--background=${pidfile}"

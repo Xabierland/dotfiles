@@ -1,4 +1,4 @@
-# arch-dotfiles
+# dotfiles
 
 > [!CAUTION]
 > Este repositorio se encuentra bajo construccion
@@ -6,6 +6,8 @@
 ## Instalacion
 
 Hay un readme en cada carpeta con los pasos a seguir para instalar cada programa y configuracion
+
+Ademas, hay esta la carpeta docs con una guia de instalacion de diferentes sistemas operativos
 
 ## Mis programas
 
@@ -16,6 +18,7 @@ Los que yo uso actualmente son los siguientes:
 | Tipo | Nombre |
 | --- | --- |
 | OS | Artix Linux |
+| Init | OpenRC |
 | DE | Cinnamon |
 | Terminal | Alacritty |
 | Shell | Zsh |
