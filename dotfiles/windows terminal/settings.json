@@ -1,0 +1,126 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": 
+    [
+        {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "keys": "alt+shift+d"
+        },
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
+        }
+    ],
+    "alwaysShowNotificationIcon": false,
+    "centerOnLaunch": true,
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{e1c9d7bf-99a1-48ea-8554-15e7664aecb8}",
+    "language": "es-ES",
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "colorScheme": "iTerm2 Smoooooth",
+            "font": 
+            {
+                "face": "Hack Nerd Font Mono"
+            },
+            "opacity": 20,
+            "useAcrylic": true
+        },
+        "list": 
+        [
+            {
+                "commandline": "C:\\Program Files\\PowerShell\\7\\pwsh.exe -NoProfileLoadTime",
+                "guid": "{e1c9d7bf-99a1-48ea-8554-15e7664aecb8}",
+                "hidden": false,
+                "icon": "ms-appx:///ProfileIcons/pwsh.png",
+                "name": "PowerShell",
+                "startingDirectory": "%USERPROFILE%",
+                "tabTitle": "PowerShell"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -nologo",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": true,
+                "name": "Windows PowerShell",
+                "suppressApplicationTitle": true,
+                "tabTitle": "Windows PowerShell"
+            },
+            {
+                "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
+                "hidden": false,
+                "icon": "C:\\wsl\\debian64.png",
+                "name": "Debian",
+                "source": "Windows.Terminal.Wsl",
+                "suppressApplicationTitle": true,
+                "tabTitle": "Debian"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe -nologo",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "CMD"
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": true,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            }
+        ]
+    },
+    "schemes": 
+    [
+        {
+            "background": "#15191F",
+            "black": "#14191E",
+            "blue": "#2744C7",
+            "brightBlack": "#686868",
+            "brightBlue": "#A7ABF2",
+            "brightCyan": "#60FDFF",
+            "brightGreen": "#58E790",
+            "brightPurple": "#E17EE1",
+            "brightRed": "#DD7975",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#ECE100",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#00C5C7",
+            "foreground": "#DCDCDC",
+            "green": "#00C200",
+            "name": "iTerm2",
+            "purple": "#C040BE",
+            "red": "#B43C2A",
+            "selectionBackground": "#B3D7FF",
+            "white": "#C7C7C7",
+            "yellow": "#C7C400"
+        }
+    ],
+    "themes": [],
+    "useAcrylicInTabRow": true
+}
