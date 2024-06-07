@@ -40,10 +40,9 @@ if (-not(Get-Command 'choco' -ErrorAction SilentlyContinue)) {
 winget install --id=Microsoft.PowerShell -e
 winget install --id=Microsoft.Powertoys -e
 winget install --id=Microsoft.Sysinternals.ProcessExplorer  -e
-choco install sysinternals -y
-choco install processexplorer -y
-choco install processmonitor -y
+winget install --id=Microsoft.Sysinternals.ProcessMonitor -e
 choco install processhacker -y
+choco install sysinternals -y
 choco install cpu-z -y
 choco install gpu-z -y
 choco install hwmonitor -y
@@ -60,10 +59,8 @@ choco install tor-browser -y
 
 ## Ofimática
 choco install libreoffice -y
-choco install sumatrapdf -y
-choco install typora -y
+choco install adobereader -y
 choco install obsidian -y
-choco install calibre -y
 
 ## Audio, fotos y vídeo
 choco install vlc -y
@@ -75,7 +72,7 @@ choco install handbrake -y
 choco install spotify -y
 choco install reaper -y
 choco install voicemeeter-banana -y
-choco install virtual-audio-cable -y
+choco install vb-cable -y
 choco install gimp -y
 choco install paint.net -y
 choco install inkscape -y
@@ -89,7 +86,7 @@ choco install hackfont -y
 choco install firacode -y
 
 ## IDEs/Runtimes/Compiladores
-choco install vscode -y
+winget --id=Microsoft.VisualStudioCode -e
 choco install intellijidea-community -y
 choco install git -y
 choco install github-desktop -y
@@ -99,7 +96,7 @@ choco install ruby -y
 choco install golang -y
 choco install rust -y
 choco install openjdk -y
-choco install miktex -y
+choco install miktex -y --params '"/Set:complete"'
 choco install cmake -y
 choco install php -y
 choco install strawberryperl -y
@@ -110,7 +107,7 @@ choco install minikube -y
 
 ## Utilidades
 choco install sed -y
-choco install nc -y
+choco install netcat -y
 choco install gawk -y
 choco install curl -y
 choco install vim -y

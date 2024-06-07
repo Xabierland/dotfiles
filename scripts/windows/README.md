@@ -46,14 +46,14 @@ winget install <nombre_del_programa>
 ## Lista de programas
 
 - Administración
-  - PowerShell
-  - PowerToys
   - WinGet
   - Chocolatey
-  - sysinternals
+  - PowerShell
+  - PowerToys
   - Process Explorer
   - Process Monitor
   - Process Hacker
+  - sysinternals
   - CPU-Z
   - GPU-Z
   - HWMonitor
@@ -68,10 +68,8 @@ winget install <nombre_del_programa>
   - Tor Browser
 - Ofimática
   - LibreOffice
-  - SumatraPDF
-  - Typora
+  - Adobe Acrobat Reader DC
   - Obsidian
-  - Calibre
 - Audio, fotos y vídeo
   - VLC
   - Stremio
@@ -83,7 +81,7 @@ winget install <nombre_del_programa>
   - Spotify
   - Reaper
   - Voicemeeter Banana
-  - VB-CABLE Virtual Audio Device
+  - VB-CABLE
   - GIMP
   - Paint.NET
   - Inkscape
