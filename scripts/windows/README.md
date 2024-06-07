@@ -50,6 +50,9 @@ winget install <nombre_del_programa>
 
 ## Lista de programas
 
+> [!Caution]
+> Puede haber programas que no se instalen debido a que la versión de Chocolatey o WinGet no este bien configurado.
+
 - Administración
   - WinGet
   - Chocolatey
