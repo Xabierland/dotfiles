@@ -7,7 +7,9 @@ $wingetPackages = @(
 )
 
 $chocoPackages = @(
+    "microsoft-windows-terminal",
     "autohotkey",
+    "autoruns",
     "procexp",
     "procmon",
     "processhacker",
@@ -49,6 +51,7 @@ $chocoPackages += @(
 ## Ofimática
 $chocoPackages += @(
     "libreoffice",
+    "miktex --params '/Set:complete'",
     "adobereader",
     "obsidian"
 )
@@ -85,14 +88,13 @@ $chocoPackages += @(
     "intellijidea-community",
     "git",
     "github-desktop",
-    "anaconda3",
+    "anaconda3 --params '/JustMe /AddToPath'",
     "nodejs",
     "ruby",
     "golang",
     "rust",
     "openjdk",
-    "miktex --params '/Set:complete'",
-    "cmake",
+    "cmake --installargs 'ADD_CMAKE_TO_PATH=System' --apply-install-arguments-to-dependencies",
     "llvm",
     "php",
     "strawberryperl",
@@ -102,13 +104,13 @@ $chocoPackages += @(
     "gcloudsdk",
     "minikube",
     "kubernetes-cli",
-    "helm",
+    "kubernetes-helm",
     "terraform"
 )
 
 ## Otros
 $chocoPackages += @(
-    "everything",
+    "everything --params '/client-service /run-on-system-startup'",
     "transmission",
     "discord",
     "telegram",

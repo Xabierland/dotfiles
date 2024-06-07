@@ -55,6 +55,9 @@ winget install <nombre_del_programa>
   - Chocolatey
   - PowerShell
   - PowerToys
+  - Windows Terminal
+  - AutoHotkey
+  - Autoruns
   - Process Explorer
   - Process Monitor
   - Process Hacker
@@ -63,6 +66,7 @@ winget install <nombre_del_programa>
   - GPU-Z
   - HWMonitor
   - Victoria
+  - CrystalDiskInfo
   - CrystalDiskMark
   - Rufus
   - 7-Zip
@@ -86,6 +90,7 @@ winget install <nombre_del_programa>
   - Tor Browser
 - Ofimática
   - LibreOffice
+  - MiKTeX
   - Adobe Acrobat Reader DC
   - Obsidian
 - Audio, fotos y vídeo
@@ -110,23 +115,28 @@ winget install <nombre_del_programa>
   - IntelliJ IDEA
   - Git
   - GitHub Desktop
-  - Anaconda (Python)
+  - Anaconda3 (Python)
   - Node.js (JavaScript)
   - Ruby
-  - Go
+  - Golang (Go)
   - Rust
   - OpenJDK (Java)
-  - MikTeX (LaTeX)
   - CMake (C/C++)
+  - LLVM (C/C++)
   - PHP
   - Strawberry Perl (Perl)
   - docker-desktop
   - aws-cli
-  - kubernetes-cli
+  - azure-cli
+  - gcloud-sdk
   - minikube
+  - kubernetes-cli
+  - kubernetes-helm
+  - terraform
 - Otros
   - Everything
   - Transmission
   - Discord
   - Telegram
   - VirtualBox
+  - Oh My Posh
