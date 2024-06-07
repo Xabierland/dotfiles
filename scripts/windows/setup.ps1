@@ -35,7 +35,7 @@ if (-not(Get-Command 'choco' -ErrorAction SilentlyContinue)) {
 
 # Instalar programas
 
-## Winget
+## Administración
 
 ### PowerShell
 winget install --id=Microsoft.PowerShell -e
@@ -46,43 +46,20 @@ winget install --id=Microsoft.Powertoys -e
 ### Process Explorer
 winget install --id=Microsoft.Sysinternals.ProcessExplorer  -e
 
-## Chocolatey
+## Utilidades
 
-### Chocolatey complements
-choco install chocolatey-core.extension -y
-choco install chocolatey-compatibility.extension -y
-choco install chocolateygui -y
+## Fuentes
 
-### Firefox
-choco install firefox -y
+## Navergadores
 
-### 7zip
-choco install 7zip.install -y
+## Audio, fotos y video
 
-### VLC
-choco install vlc -y
+## IDE
 
-### Git
-choco install git.install -y
+## Programación
 
-### Paint.NET
-choco install paint.net -y
+## Ofimática
 
-### Visual Studio Code
-choco install vscode -y
+## Contraseñas
 
-### Everything
-choco install everything -y
-
-### Obsidian
-choco install obsidian -y
-
-### Java
-choco install openjdk -y
-
-### Python
-choco install python -y
-
-### Node.js
-choco install nodejs -y
-
+## Otros

@@ -53,25 +53,16 @@ choco upgrade all
   - GNU Wget
   - Rufus
   - 7-Zip
-- Utilidades
-  - sed
-  - netcat
-  - awk
-  - cURL
-  - vim
-  - aws-cli
-  - kubernetes-cli
-  - minikube
-  - gpg4win
-  - tree
-  - less
-  - docker-desktop
-- Fuentes
-  - Hack Font
 - Navegadores
   - Mozilla Firefox
   - LibreWolf
   - Tor Browser
+- Ofimática
+  - LibreOffice
+  - SumatraPDF
+  - Typora
+  - Obsidian
+  - Calibre
 - Audio, fotos y vídeo
   - VLC
   - Stremio
@@ -86,10 +77,15 @@ choco upgrade all
   - VB-CABLE Virtual Audio Device
   - GIMP
   - Inkscape
-- IDE
+- Contraseña
+  - Bitwarden
+  - KeePassXC
+- Fuentes
+  - Hack Font
+  - Firacode
+- IDEs/Runtimes/Compiladores
   - Visual Studio Code
   - IntelliJ IDEA
-- Programacion
   - Git
   - GitHub Desktop
   - Anaconda (Python)
@@ -102,15 +98,19 @@ choco upgrade all
   - CMake (C/C++)
   - PHP
   - Strawberry Perl (Perl)
-- Ofimática
-  - LibreOffice
-  - SumatraPDF
-  - Typora
-  - Calibre
-- Contraseña
-  - Bitwarden
-  - KeePassXC
+  - docker-desktop
+  - aws-cli
+  - kubernetes-cli
+  - minikube
+- Utilidades
+  - sed
+  - netcat
+  - awk
+  - cURL
+  - vim
+  - gpg4win
+  - tree
+  - less
 - Otros
-  - Obsidian (Notas)
-  - Everything (Buscador de archivos)
-  - Transmission (Torrent)
+  - Everything
+  - Transmission
