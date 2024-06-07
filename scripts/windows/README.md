@@ -12,6 +12,7 @@ Para ejecutar el script, simplemente ejecuta el siguiente comando en PowerShell:
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
 .\setup.ps1
+
 ```
 
 o
@@ -19,6 +20,7 @@ o
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
 irm https://raw.githubusercontent.com/Xabierland/dotfiles/599eadfdfb3555585086248d7f2920d152640f95/scripts/windows/setup.ps1 | iex
+
 ```
 
 Para mantener todo al dia ejecuta los siguientes comandos:
@@ -26,18 +28,21 @@ Para mantener todo al dia ejecuta los siguientes comandos:
 ```powershell
 winget upgrade
 choco upgrade all
+
 ```
 
 Si quieres instalar un programa nuevo, en vez de ir a la web usa el siguiente comando:
 
 ```powershell
 choco install <nombre_del_programa>
+
 ```
 
 o
 
 ```powershell
 winget install <nombre_del_programa>
+
 ```
 
 ## Acciones
