@@ -51,7 +51,7 @@ $chocoPackages += @(
 ## Ofimática
 $chocoPackages += @(
     "libreoffice",
-    #"miktex --params '/Set:complete'",
+    "miktex --params '/Set:complete'",
     "adobereader",
     "obsidian"
 )
