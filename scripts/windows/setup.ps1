@@ -86,7 +86,7 @@ choco install hackfont -y
 choco install firacode -y
 
 ## IDEs/Runtimes/Compiladores
-winget --id=Microsoft.VisualStudioCode -e
+winget install --id=Microsoft.VisualStudioCode -e
 choco install intellijidea-community -y
 choco install git -y
 choco install github-desktop -y

@@ -1,9 +1,14 @@
 # Uso del script de configuración de Windows
 
-> [!WARNING]
-> Necesario Windows Pro, Enterprise o Education para ejecutar el script junto con permisos de administrador en PowerShell.
-
 Este script de configuración de Windows se encarga de instalar y configurar las herramientas necesarias para mi entorno Windows.
+
+## Requisitos
+
+- Windows 10 o superior
+- Windows PowerShell
+- Configurar Windows PowerShell
+
+![PowerShell](.img/image.png)
 
 ## Uso
 
@@ -59,7 +64,6 @@ winget install <nombre_del_programa>
   - HWMonitor
   - Victoria
   - CrystalDiskMark
-  - GNU Wget
   - Rufus
   - 7-Zip
 - Navegadores
@@ -120,6 +124,7 @@ winget install <nombre_del_programa>
   - gpg4win
   - tree
   - less
+  - wget
 - Otros
   - Everything
   - Transmission
