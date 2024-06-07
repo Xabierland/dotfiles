@@ -66,6 +66,20 @@ winget install <nombre_del_programa>
   - CrystalDiskMark
   - Rufus
   - 7-Zip
+- Utilidades
+  - wget
+  - sed
+  - netcat
+  - awk
+  - cURL
+  - vim
+  - nano
+  - gpg4win
+  - tree
+  - less
+  - make
+  - exiftool
+  - grep
 - Navegadores
   - Mozilla Firefox
   - LibreWolf
@@ -80,7 +94,6 @@ winget install <nombre_del_programa>
   - Audacity
   - OBS Studio
   - FFmpeg
-  - OBS Studio
   - HandBrake
   - Spotify
   - Reaper
@@ -92,9 +105,6 @@ winget install <nombre_del_programa>
 - Contraseña
   - Bitwarden
   - KeePassXC
-- Fuentes
-  - Hack Font
-  - Firacode
 - IDEs/Runtimes/Compiladores
   - Visual Studio Code
   - IntelliJ IDEA
@@ -114,17 +124,9 @@ winget install <nombre_del_programa>
   - aws-cli
   - kubernetes-cli
   - minikube
-- Utilidades
-  - sed
-  - netcat
-  - awk
-  - cURL
-  - vim
-  - nano
-  - gpg4win
-  - tree
-  - less
-  - wget
 - Otros
   - Everything
   - Transmission
+  - Discord
+  - Telegram
+  - VirtualBox
