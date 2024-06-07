@@ -19,7 +19,7 @@ o
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
-irm https://raw.githubusercontent.com/Xabierland/dotfiles/599eadfdfb3555585086248d7f2920d152640f95/scripts/windows/setup.ps1 | iex
+irm https://raw.githubusercontent.com/Xabierland/dotfiles/main/scripts/windows/setup.ps1 | iex
 
 ```
 
