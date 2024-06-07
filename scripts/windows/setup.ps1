@@ -36,30 +36,88 @@ if (-not(Get-Command 'choco' -ErrorAction SilentlyContinue)) {
 # Instalar programas
 
 ## Administración
-
-### PowerShell
 winget install --id=Microsoft.PowerShell -e
-
-### PowerToys
 winget install --id=Microsoft.Powertoys -e
-
-### Process Explorer
 winget install --id=Microsoft.Sysinternals.ProcessExplorer  -e
+choco install sysinternals -y
+choco install processexplorer -y
+choco install processmonitor -y
+choco install processhacker -y
+choco install cpu-z -y
+choco install gpu-z -y
+choco install hwmonitor -y
+choco install victoria -y
+choco install crystaldiskmark -y
+choco install wget -y
+choco install rufus -y
+choco install 7zip -y
 
-## Utilidades
-
-## Fuentes
-
-## Navergadores
-
-## Audio, fotos y video
-
-## IDE
-
-## Programación
+## Navegadores
+choco install firefox -y
+choco install librewolf -y
+choco install tor-browser -y
 
 ## Ofimática
+choco install libreoffice -y
+choco install sumatrapdf -y
+choco install typora -y
+choco install obsidian -y
+choco install calibre -y
 
-## Contraseñas
+## Audio, fotos y vídeo
+choco install vlc -y
+choco install stremio -y
+choco install audacity -y
+choco install obs-studio -y
+choco install ffmpeg -y
+choco install handbrake -y
+choco install spotify -y
+choco install reaper -y
+choco install voicemeeter-banana -y
+choco install virtual-audio-cable -y
+choco install gimp -y
+choco install paint.net -y
+choco install inkscape -y
+
+## Contraseña
+choco install bitwarden -y
+choco install keepassxc -y
+
+## Fuentes
+choco install hackfont -y
+choco install firacode -y
+
+## IDEs/Runtimes/Compiladores
+choco install vscode -y
+choco install intellijidea-community -y
+choco install git -y
+choco install github-desktop -y
+choco install anaconda3 -y
+choco install nodejs -y
+choco install ruby -y
+choco install golang -y
+choco install rust -y
+choco install openjdk -y
+choco install miktex -y
+choco install cmake -y
+choco install php -y
+choco install strawberryperl -y
+choco install docker-desktop -y
+choco install awscli -y
+choco install kubernetes-cli -y
+choco install minikube -y
+
+## Utilidades
+choco install sed -y
+choco install nc -y
+choco install gawk -y
+choco install curl -y
+choco install vim -y
+choco install nano -y
+choco install gpg4win -y
+choco install tree -y
+choco install less -y
 
 ## Otros
+choco install everything -y
+choco install transmission -y

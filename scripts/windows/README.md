@@ -28,11 +28,23 @@ winget upgrade
 choco upgrade all
 ```
 
+Si quieres instalar un programa nuevo, en vez de ir a la web usa el siguiente comando:
+
+```powershell
+choco install <nombre_del_programa>
+```
+
+o
+
+```powershell
+winget install <nombre_del_programa>
+```
+
 ## Acciones
 
 1. Permisos y herramientas necesarias
-2. Instalación de programas
-3. ~~Debloat Windows~~
+2. ~~Debloat Windows~~
+3. Instalación de programas
 
 ## Lista de programas
 
@@ -76,6 +88,7 @@ choco upgrade all
   - Voicemeeter Banana
   - VB-CABLE Virtual Audio Device
   - GIMP
+  - Paint.NET
   - Inkscape
 - Contraseña
   - Bitwarden
@@ -108,6 +121,7 @@ choco upgrade all
   - awk
   - cURL
   - vim
+  - nano
   - gpg4win
   - tree
   - less
