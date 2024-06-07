@@ -18,7 +18,7 @@ o
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
-
+irm https://raw.githubusercontent.com/Xabierland/dotfiles/599eadfdfb3555585086248d7f2920d152640f95/scripts/windows/setup.ps1 | iex
 ```
 
 Para mantener todo al dia ejecuta los siguientes comandos:
@@ -48,22 +48,35 @@ choco upgrade all
   - CPU-Z
   - GPU-Z
   - HWMonitor
-  - CrystalDiskMark
   - Victoria
+  - CrystalDiskMark
   - GNU Wget
   - Rufus
   - 7-Zip
+- Utilidades
   - sed
   - netcat
+  - awk
+  - cURL
+  - vim
+  - aws-cli
+  - kubernetes-cli
+  - minikube
+  - gpg4win
+  - tree
+  - less
+  - docker-desktop
 - Fuentes
   - Hack Font
 - Navegadores
   - Mozilla Firefox
   - LibreWolf
   - Tor Browser
-- Audio y vídeo
+- Audio, fotos y vídeo
   - VLC
+  - Stremio
   - Audacity
+  - OBS Studio
   - FFmpeg
   - OBS Studio
   - HandBrake
@@ -71,16 +84,33 @@ choco upgrade all
   - Reaper
   - Voicemeeter Banana
   - VB-CABLE Virtual Audio Device
+  - GIMP
+  - Inkscape
 - IDE
   - Visual Studio Code
   - IntelliJ IDEA
 - Programacion
   - Git
+  - GitHub Desktop
   - Anaconda (Python)
-  - Node.js
+  - Node.js (JavaScript)
   - Ruby
   - Go
   - Rust
-  - OpenJDK
-  - MikTeX
-- 
+  - OpenJDK (Java)
+  - MikTeX (LaTeX)
+  - CMake (C/C++)
+  - PHP
+  - Strawberry Perl (Perl)
+- Ofimática
+  - LibreOffice
+  - SumatraPDF
+  - Typora
+  - Calibre
+- Contraseña
+  - Bitwarden
+  - KeePassXC
+- Otros
+  - Obsidian (Notas)
+  - Everything (Buscador de archivos)
+  - Transmission (Torrent)
