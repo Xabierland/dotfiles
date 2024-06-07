@@ -11,14 +11,6 @@ Para ejecutar el script, simplemente ejecuta el siguiente comando en PowerShell:
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
-.\setup.ps1
-
-```
-
-o
-
-```powershell
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
 irm https://raw.githubusercontent.com/Xabierland/dotfiles/main/scripts/windows/setup.ps1 | iex
 
 ```
