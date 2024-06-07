@@ -51,7 +51,7 @@ winget install <nombre_del_programa>
 ## Lista de programas
 
 > [!Caution]
-> Puede haber programas que no se instalen debido a que la versión de Chocolatey o WinGet no este bien configurado.
+> Puede haber programas que no se instalen debido a que la versión de Chocolatey o WinGet no este bien configurado. Ejecuta el script pasados unos dias o instalalos manualmente. Los paquetes marcados con un asterisco (*) son los que mas problemas suelen dar.
 
 - Administración
   - WinGet
@@ -93,7 +93,7 @@ winget install <nombre_del_programa>
   - Tor Browser
 - Ofimática
   - LibreOffice
-  - MiKTeX
+  - MiKTeX*
   - Adobe Acrobat Reader DC
   - Obsidian
 - Audio, fotos y vídeo
@@ -118,7 +118,7 @@ winget install <nombre_del_programa>
   - IntelliJ IDEA
   - Git
   - GitHub Desktop
-  - Anaconda3 (Python)
+  - Anaconda3 (Python)*
   - Node.js (JavaScript)
   - Ruby
   - Golang (Go)
@@ -128,7 +128,7 @@ winget install <nombre_del_programa>
   - LLVM (C/C++)
   - PHP
   - Strawberry Perl (Perl)
-  - docker-desktop
+  - docker-desktop*
   - aws-cli
   - azure-cli
   - gcloud-sdk

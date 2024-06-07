@@ -157,13 +157,25 @@ if (-not(Get-Command 'choco' -ErrorAction SilentlyContinue)) {
 }
 
 # Instalar paquetes usando winget
+$errors = @()
+
 foreach ($package in $wingetPackages) {
     Write-Output "Installing $package..."
-    winget install --id=$package -e
+    $result = winget install --id=$package -e
+    if ($result -eq 1 -or $result -eq -1) {
+        $errors += $package
+    }
 }
 
-# Instalar paquetes usando chocolatey
 foreach ($package in $chocoPackages) {
     Write-Output "Installing $package..."
-    choco install $package -y
+    $result = choco install $package -y
+    if ($result -eq 1 -or $result -eq -1) {
+        $errors += $package
+    }
+}
+
+if ($errors.Count -gt 0) {
+    Write-Output "Installation errors:"
+    $errors
 }
