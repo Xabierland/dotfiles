@@ -17,7 +17,7 @@ if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 if (-not(Get-Command 'winget' -ErrorAction SilentlyContinue)) {
     # Instalar winget
     $progressPreference = 'silentlyContinue'
-    Write-Information "Downloading WinGet and its dependencies..."
+    Write-Output "Installing WinGet and its dependencies..."
     Invoke-WebRequest -Uri https://aka.ms/getwinget -OutFile Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
     Invoke-WebRequest -Uri https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx -OutFile Microsoft.VCLibs.x64.14.00.Desktop.appx
     Invoke-WebRequest -Uri https://github.com/microsoft/microsoft-ui-xaml/releases/download/v2.8.6/Microsoft.UI.Xaml.2.8.x64.appx -OutFile Microsoft.UI.Xaml.2.8.x64.appx
@@ -29,6 +29,7 @@ if (-not(Get-Command 'winget' -ErrorAction SilentlyContinue)) {
 # Comprobando si chocolatey está instalado
 if (-not(Get-Command 'choco' -ErrorAction SilentlyContinue)) {
     # Instalar Chocolatey
+    Write-Output "Installing Chocolatey..."
     $chocoInstallScript = "https://chocolatey.org/install.ps1"
     Invoke-Expression ((New-Object System.Net.WebClient).DownloadString($chocoInstallScript))
 }
