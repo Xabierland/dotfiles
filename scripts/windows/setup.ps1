@@ -249,7 +249,7 @@ if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 
 # Imprimir banner
 Install-Module WriteAscii
-Write-Ascii -InputObject "Autoconfigurador de Windows"
+Write-Ascii -InputObject "AutoWindows"
 Write-Output "by @xabierland"
 Write-Output ""
 Write-Output "Este script quitará todos el bloatware de Windows y instalará los programas QUE YO más uso."
