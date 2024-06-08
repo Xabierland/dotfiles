@@ -214,6 +214,7 @@ function installPrograms {
 Write-Output "Seleccione una opción:"
 Write-Output "1. Debloat Windows"
 Write-Output "2. Instalar programas"
+Write-Output "3. Salir"
 while ($true) {
     $option = Read-Host "Ingrese el número de la opción deseada"
 
@@ -226,6 +227,9 @@ while ($true) {
         2 {
             installPrograms
             return
+        }
+        3{
+            return 0
         }
         default {
             Write-Output "Opción inválida. Por favor, seleccione una opción válida."
