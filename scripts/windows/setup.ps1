@@ -1,17 +1,5 @@
 Set-ExecutionPolicy Bypass -Scope Process -Force
 
-# Verificar si el script tiene privilegios de administrador
-if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")){
-    # Obtener la ruta del script actual
-    $scriptPath = $MyInvocation.MyCommand.Definition
-
-    # Iniciar una nueva instancia de PowerShell como administrador
-    Start-Process PowerShell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$scriptPath`"" -Verb RunAs
-
-    # Salir del script actual
-    exit
-}
-
 function debloatWindows {
     # Debloat Windows
     ## Windows Modo Oscuro
@@ -40,6 +28,7 @@ function debloatWindows {
 }
 
 function installPrograms {
+    # Paquetes a instalar por categorias
     ## Administración
     $wingetPackages = @(
         "Microsoft.PowerShell",
@@ -167,7 +156,7 @@ function installPrograms {
     if (-not(Get-Command 'winget' -ErrorAction SilentlyContinue)) {
         # Instalar winget
         $progressPreference = 'silentlyContinue'
-        Write-Output "Installing WinGet and its dependencies..."
+        Write-Output "Instalando winget..."
         Invoke-WebRequest -Uri https://aka.ms/getwinget -OutFile Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
         Invoke-WebRequest -Uri https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx -OutFile Microsoft.VCLibs.x64.14.00.Desktop.appx
         Invoke-WebRequest -Uri https://github.com/microsoft/microsoft-ui-xaml/releases/download/v2.8.6/Microsoft.UI.Xaml.2.8.x64.appx -OutFile Microsoft.UI.Xaml.2.8.x64.appx
@@ -179,7 +168,7 @@ function installPrograms {
     # Comprobando si chocolatey está instalado
     if (-not(Get-Command 'choco' -ErrorAction SilentlyContinue)) {
         # Instalar Chocolatey
-        Write-Output "Installing Chocolatey..."
+        Write-Output "Instalando Chocolatey..."
         $chocoInstallScript = "https://chocolatey.org/install.ps1"
         Invoke-Expression ((New-Object System.Net.WebClient).DownloadString($chocoInstallScript))
     }
@@ -210,29 +199,62 @@ function installPrograms {
 
 }
 
-# Mostrar menú de opciones
-Write-Output "Seleccione una opción:"
-Write-Output "1. Debloat Windows"
-Write-Output "2. Instalar programas"
-Write-Output "3. Salir"
-while ($true) {
-    $option = Read-Host "Ingrese el número de la opción deseada"
+function main {
+    while ($true) {
+        # Mostrar menú de opciones
+        Write-Output "Seleccione una opción:"
+        Write-Output "1. All"
+        Write-Output "2. Debloat Windows"
+        Write-Output "3. Instalar programas"
+        Write-Output "9. Salir"
+    
+        $option = Read-Host "Ingrese el número de la opción deseada"
 
-    # Ejecutar la opción seleccionada
-    switch ($option) {
-        1 {
-            debloatWindows
-            return
-        }
-        2 {
-            installPrograms
-            return
-        }
-        3{
-            return 0
-        }
-        default {
-            Write-Output "Opción inválida. Por favor, seleccione una opción válida."
+        # Ejecutar la opción seleccionada
+        switch ($option) {
+            1 {
+                debloatWindows
+                installPrograms
+                return
+            }
+            2 {
+                debloatWindows
+                return
+            }
+            3{
+                installPrograms
+                return
+            }
+            9 {
+                return
+            }
+            default {
+                Write-Output "Opción inválida. Por favor, seleccione una opción válida."
+            }
         }
     }
 }
+
+# Verificar si el script tiene privilegios de administrador
+if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")){
+    # Obtener la ruta del script actual
+    $scriptPath = $MyInvocation.MyCommand.Definition
+
+    # Iniciar una nueva instancia de PowerShell como administrador
+    Start-Process PowerShell -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$scriptPath`"" -Verb RunAs
+
+    # Salir del script actual
+    exit
+}
+
+# Imprimir banner
+Install-Module WriteAscii
+Write-Ascii -InputObject "Autoconfigurador de Windows"
+Write-Output "by @xabierland"
+Write-Output ""
+Write-Output "Este script quitará todos el bloatware de Windows y instalará los programas QUE YO más uso."
+Write-Output "El script se distribuye bajo la licencia MIT. Puedes modificarlo y distribuirlo libremente pero bajo tu responsabilidad."
+Write-Output ""
+Write-Output "Si estas seguro de continuar presiona cualquier tecla para continuar o Ctrl+C para salir."
+Read-Host
+main
