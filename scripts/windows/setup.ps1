@@ -248,8 +248,12 @@ if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 }
 
 # Imprimir banner
-Install-Module WriteAscii
-Write-Ascii -InputObject "AutoWindows"
+Write-Output "    _         _     __        ___           _                   "
+Write-Output "   / \  _   _| |_ __\ \      / (_)_ __   __| | _____      _____ "
+Write-Output "  / _ \| | | | __/ _ \ \ /\ / /| | '_ \ / _` |/ _ \ \ /\ / / __|"
+Write-Output " / ___ \ |_| | || (_) \ V  V / | | | | | (_| | (_) \ V  V /\__ \"
+write-Output "/_/   \_\__,_|\__\___/ \_/\_/  |_|_| |_|\__,_|\___/ \_/\_/ |___/"
+Write-Output ""
 Write-Output "by @xabierland"
 Write-Output ""
 Write-Output "Este script quitará todos el bloatware de Windows y instalará los programas QUE YO más uso."
