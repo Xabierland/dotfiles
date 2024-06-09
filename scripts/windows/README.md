@@ -53,7 +53,7 @@ winget install <nombre_del_programa>
 ## Acciones
 
 1. Permisos y herramientas necesarias
-2. ~~Debloat Windows~~
+2. Debloat Windows
 3. Instalación de programas
 
 ## Lista de programas
