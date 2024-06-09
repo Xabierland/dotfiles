@@ -15,8 +15,16 @@ Este script de configuración de Windows se encarga de instalar y configurar las
 Para ejecutar el script, simplemente ejecuta el siguiente comando en PowerShell:
 
 ```powershell
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine -Force
 irm https://raw.githubusercontent.com/Xabierland/dotfiles/main/scripts/windows/setup.ps1 | iex
+
+```
+
+o
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine -Force
+./setup.ps1
 
 ```
 
@@ -53,93 +61,95 @@ winget install <nombre_del_programa>
 > [!Caution]
 > Puede haber programas que no se instalen debido a que la versión de Chocolatey o WinGet no este bien configurado. Ejecuta el script pasados unos dias o instalalos manualmente. Los paquetes marcados con un asterisco (*) son los que mas problemas suelen dar.
 
+- Gestores de paquetes
+  - WinGet [INSTALADO]
+  - Chocolatey [INSTALADO]
 - Administración
-  - WinGet
-  - Chocolatey
-  - PowerShell
-  - PowerToys
-  - Windows Terminal
-  - AutoHotkey
-  - Autoruns
-  - Process Explorer
-  - Process Monitor
-  - Process Hacker
-  - sysinternals
-  - CPU-Z
-  - GPU-Z
-  - HWMonitor
-  - Victoria
-  - CrystalDiskInfo
-  - CrystalDiskMark
-  - Rufus
-  - 7-Zip
+  - Windows Terminal [INSTALADO]
+  - PowerShell [INSTALADO]
+  - PowerToys [NO INSTALADO]
+  - AutoHotkey [INSTALADO]
+  - Autoruns [INSTALADO]
+  - Process Explorer [INSTALADO]
+  - Process Monitor [INSTALADO]
+  - Process Hacker [INSTALADO]
+  - sysinternals [INSTALADO]
+- Información del sistema
+  - CPU-Z [INSTALADO]
+  - GPU-Z [NO INSTALADO]
+  - HWMonitor [INSTALADO]
+  - Victoria [INSTALADO]
+  - CrystalDiskInfo [INSTALADO]
+  - CrystalDiskMark [INSTALADO]
 - Utilidades
-  - wget
-  - sed
-  - netcat
-  - awk
-  - cURL
-  - vim
-  - nano
-  - gpg4win
-  - tree
-  - less
-  - make
-  - exiftool
-  - grep
+  - Rufus [NO INSTALADO]
+  - 7-Zip [INSTALADO]
+  - wget [INSTALADO]
+  - sed [INSTALADO]
+  - netcat [INSTALADO]
+  - awk [INSTALADO]
+  - cURL [INSTALADO]
+  - vim [INSTALADO]
+  - nano [INSTALADO]
+  - gpg4win [INSTALADO]
+  - tree [INSTALADO]
+  - less [INSTALADO]
+  - make [INSTALADO]
+  - exiftool [INSTALADO]
+  - grep [INSTALADO]
 - Navegadores
-  - Mozilla Firefox
-  - LibreWolf
-  - Tor Browser
+  - Mozilla Firefox [INSTALADO]
+  - LibreWolf [INSTALADO]
+  - Tor Browser [INSTALADO - NO START MENU]
 - Ofimática
-  - LibreOffice
+  - LibreOffice [INSTALADO]
   - MiKTeX*
-  - Adobe Acrobat Reader DC
-  - Obsidian
+  - Adobe Acrobat Reader DC [INSTALADO]
+  - Obsidian [INSTALADO]
 - Audio, fotos y vídeo
-  - VLC
-  - Stremio
-  - Audacity
-  - OBS Studio
-  - FFmpeg
-  - HandBrake
-  - Spotify
-  - Reaper
-  - Voicemeeter Banana
-  - VB-CABLE
-  - GIMP
-  - Paint.NET
-  - Inkscape
+  - VLC [INSTALADO]
+  - Stremio [INSTALADO]
+  - Audacity [INSTALADO]
+  - OBS Studio [INSTALADO]
+  - FFmpeg [INSTALADO]
+  - HandBrake [INSTALADO]
+  - Spotify [INSTALADO]
+  - Reaper [INSTALADO]
+  - Voicemeeter Banana [NO SE INSTALA DEL TODO]
+  - VB-CABLE [NO INSTALADO]
+  - GIMP [INSTALADO]
+  - Paint.NET [INSTALADO]
+  - Inkscape [INSTALADO]
 - Contraseña
-  - Bitwarden
-  - KeePassXC
+  - Bitwarden [INSTALADO]
+  - KeePassXC [INSTALADO]
 - IDEs/Runtimes/Compiladores
-  - Visual Studio Code
-  - IntelliJ IDEA
-  - Git
-  - GitHub Desktop
+  - Visual Studio Code [NO INSTALADO]
+  - IntelliJ IDEA [INSTALADO]
+  - Git [INSTALADO]
+  - GitHub Desktop [INSTALADO]
   - Anaconda3 (Python)*
-  - Node.js (JavaScript)
-  - Ruby
-  - Golang (Go)
-  - Rust
-  - OpenJDK (Java)
-  - CMake (C/C++)
-  - LLVM (C/C++)
-  - PHP
-  - Strawberry Perl (Perl)
+  - Node.js (JavaScript) [INSTALADO]
+  - Ruby [INSTALADO]
+  - Golang (Go) [INSTALADO]
+  - Rust [INSTALADO]
+  - OpenJDK (Java) [INSTALADO]
+  - CMake (C/C++) [NO INSTALADO]
+  - LLVM (C/C++) [INSTALADO]
+  - PHP [INSTALADO]
+  - Strawberry Perl (Perl) [INSTALADO]
   - docker-desktop*
-  - aws-cli
+  - aws-cli [INSTALADO]
   - azure-cli
-  - gcloud-sdk
-  - minikube
-  - kubernetes-cli
-  - kubernetes-helm
-  - terraform
+  - gcloud-sdk [INSTALADO]
+  - minikube [INSTALADO]
+  - kubernetes-cli [INSTALADO]
+  - kubernetes-helm [INSTALADO]
+  - terraform [INSTALADO]
 - Otros
-  - Everything
-  - Transmission
-  - Discord
-  - Telegram
-  - VirtualBox
-  - Oh My Posh
+  - Everything [NO INSTALADO]
+  - Transmission [INSTALADO]
+  - Discord [INSTALADO]
+  - Telegram [INSTALADO]
+  - VirtualBox [INSTALADO]
+  - Oh My Posh [INSTALADO]

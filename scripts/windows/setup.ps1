@@ -1,5 +1,3 @@
-Set-ExecutionPolicy Bypass -Scope Process -Force
-
 function debloatWindows {
     # Debloat Windows
     ## Windows Modo Oscuro
@@ -10,18 +8,15 @@ function debloatWindows {
     New-ItemProperty -Path "HKCU:\Control Panel\Desktop" -Name "WallPaper" -Value "" -PropertyType String -Force
     New-ItemProperty -Path "HKCU:\Control Panel\Colors" -Name "Background" -Value "0 0 0" -PropertyType String -Force
 
-    ## Desinstalar Microsoft Edge
-
-
     ## Desinstalar Cortana
     Get-AppxPackage -allusers Microsoft.549981C3F5F10 | Remove-AppxPackage
     Get-AppxPackage -allusers Microsoft.549981C3F5F10 | Remove-AppxProvisionedPackage -Online
 
-    ## Desactivar Microsoft Copilot
-
     ## Desactivar Recall
-    Set-ItemProperty -Path "HKCU:\Software\Policies\Microsoft\Windows\WindowsAI" -Name "DisableAIDataAnalysis" -Value 1 -Type DWord
-    Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsAI" -Name "DisableAIDataAnalysis" -Value 1 -Type DWord
+    if (Test-Path "HKCU:\Software\Policies\Microsoft\Windows\WindowsAI" -or Test-Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsAI") {
+        Set-ItemProperty -Path "HKCU:\Software\Policies\Microsoft\Windows\WindowsAI" -Name "DisableAIDataAnalysis" -Value 1 -Type DWord
+        Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsAI" -Name "DisableAIDataAnalysis" -Value 1 -Type DWord
+    }
 
     ## Desactivar Telemetría
     New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\DataCollection" -Name "AllowTelemetry" -Value 0 -PropertyType DWORD -Force
@@ -31,11 +26,12 @@ function installPrograms {
     # Paquetes a instalar por categorias
     ## Administración
     $wingetPackages = @(
-        "Microsoft.PowerShell",
-        "Microsoft.Powertoys"
+        "Microsoft.VisualStudioCode"
     )
 
     $chocoPackages = @(
+            ##* Administración
+        "powertoys",
         "microsoft-windows-terminal",
         "autohotkey",
         "autoruns",
@@ -43,18 +39,16 @@ function installPrograms {
         "procmon",
         "processhacker",
         "sysinternals",
+            ##* Información del sistema
         "cpu-z",
         "gpu-z",
         "hwmonitor",
         "victoria",
         "crystaldiskinfo",
         "crystaldiskmark",
+            ##* Utilidades
         "rufus",
-        "7zip"
-    )
-
-    ## Utilidades
-    $chocoPackages += @(
+        "7zip",
         "wget",
         "sed",
         "netcat",
@@ -67,26 +61,17 @@ function installPrograms {
         "less",
         "make",
         "exiftool",
-        "grep"
-    )
-
-    ## Navegadores
-    $chocoPackages += @(
+        "grep",
+            ##* Navegadores
         "firefox",
         "librewolf",
-        "tor-browser"
-    )
-
-    ## Ofimática
-    $chocoPackages += @(
+        "tor-browser",
+            ##* Ofimática
         "libreoffice",
-        "miktex --params '/Set:complete'",
+        "miktex --params '/Set:essential'",
         "adobereader",
-        "obsidian"
-    )
-
-    ## Audio, fotos y vídeo
-    $chocoPackages += @(
+        "obsidian",
+            ##* Audio, fotos y vídeo
         "vlc",
         "stremio",
         "audacity",
@@ -99,21 +84,11 @@ function installPrograms {
         "vb-cable",
         "gimp",
         "paint.net",
-        "inkscape"
-    )
-
-    ## Contraseña
-    $chocoPackages += @(
+        "inkscape",
+            ##* Contraseñas
         "bitwarden",
-        "keepassxc"
-    )
-
-    ## IDEs/Runtimes/Compiladores
-    $wingetPackages += @(
-        "Microsoft.VisualStudioCode"
-    )
-
-    $chocoPackages += @(
+        "keepassxc",
+            ##* IDEs/Runtimes/Compiladores
         "intellijidea-community",
         "git",
         "github-desktop",
@@ -123,10 +98,11 @@ function installPrograms {
         "golang",
         "rust",
         "openjdk",
-        "cmake --installargs 'ADD_CMAKE_TO_PATH=System' --apply-install-arguments-to-dependencies",
+        "cmake",
         "llvm",
         "php",
         "strawberryperl",
+            ##* DevOps
         "docker-desktop",
         "awscli",
         "azure-cli",
@@ -134,12 +110,9 @@ function installPrograms {
         "minikube",
         "kubernetes-cli",
         "kubernetes-helm",
-        "terraform"
-    )
-
-    ## Otros
-    $chocoPackages += @(
-        "everything --params '/client-service /run-on-system-startup'",
+        "terraform",
+            ##* Otros
+        "everything",
         "transmission",
         "discord",
         "telegram",
@@ -147,12 +120,10 @@ function installPrograms {
         "oh-my-posh"
     )
 
-
-
-
     # Instalar programas
+    $result = @()
 
-    # Comprobando si winget está instalado
+    # Instalar WinGet
     if (-not(Get-Command 'winget' -ErrorAction SilentlyContinue)) {
         # Instalar winget
         $progressPreference = 'silentlyContinue'
@@ -163,43 +134,55 @@ function installPrograms {
         Add-AppxPackage Microsoft.VCLibs.x64.14.00.Desktop.appx
         Add-AppxPackage Microsoft.UI.Xaml.2.8.x64.appx
         Add-AppxPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+        Remove-Item Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+        Remove-Item Microsoft.VCLibs.x64.14.00.Desktop.appx
+        Remove-Item Microsoft.UI.Xaml.2.8.x64.appx
     }
 
-    # Comprobando si chocolatey está instalado
+    # Instalar PowerShell
+    if (-not(Get-Command 'pwsh' -ErrorAction SilentlyContinue)) {
+        Write-Output "Instalando PowerShell..."
+        winget install --id Microsoft.PowerShell -e
+    }
+
+    # Instalar Chocolatey
     if (-not(Get-Command 'choco' -ErrorAction SilentlyContinue)) {
         # Instalar Chocolatey
         Write-Output "Instalando Chocolatey..."
-        $chocoInstallScript = "https://chocolatey.org/install.ps1"
-        Invoke-Expression ((New-Object System.Net.WebClient).DownloadString($chocoInstallScript))
+        $result = winget install --id chocolatey.chocolatey --source winget
+        if ($result -eq 1 -or $result -eq -1) {
+            return 1
+        }
+        # Refrescar el entorno PATH para incluir la ubicación de Chocolatey
+        $env:PATH = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
     }
 
-    # Instalar paquetes usando winget
-    $errors = @()
-
     foreach ($package in $wingetPackages) {
-        Write-Output "Installing $package..."
-        $result = winget install --id=$package -e
-        if ($result -eq 1 -or $result -eq -1) {
-            $errors += $package
-        }
+        Write-Output "Instalando $package..."
+        $result += winget install --id=$package -e
     }
 
     foreach ($package in $chocoPackages) {
-        Write-Output "Installing $package..."
-        $result = choco install $package -y
-        if ($result -eq 1 -or $result -eq -1) {
-            $errors += $package
-        }
+        Write-Output "Instalando $package..."
+        $result += choco install $package -y
     }
-
-    if ($errors.Count -gt 0) {
-        Write-Output "Installation errors:"
-        $errors
-    }
-
 }
 
 function main {
+    # Imprimir banner
+    Write-Output "    _         _     __        ___           _                   "
+    Write-Output "   / \  _   _| |_ __\ \      / (_)_ __   __| | _____      _____ "
+    Write-Output "  / _ \| | | | __/ _ \ \ /\ / /| | '_ \ / _` |/ _ \ \ /\ / / __|"
+    Write-Output " / ___ \ |_| | || (_) \ V  V / | | | | | (_| | (_) \ V  V /\__ \"
+    write-Output "/_/   \_\__,_|\__\___/ \_/\_/  |_|_| |_|\__,_|\___/ \_/\_/ |___/"
+    Write-Output ""
+    Write-Output "by @xabierland"
+    Write-Output ""
+    Write-Output "Este script quitará todos el bloatware de Windows y instalará los programas QUE YO más uso."
+    Write-Output "El script se distribuye bajo la licencia MIT. Puedes modificarlo y distribuirlo libremente pero bajo tu responsabilidad."
+    Write-Output ""
+    Write-Output "Si estas seguro de continuar presiona cualquier tecla para continuar o Ctrl+C para salir."
+    Read-Host
     while ($true) {
         # Mostrar menú de opciones
         Write-Output "Seleccione una opción:"
@@ -215,14 +198,23 @@ function main {
             1 {
                 debloatWindows
                 installPrograms
+                Write-Output ""
+                Write-Output "Proceso completado."
+                Read-Host "Presione cualquier tecla para cerrar"
                 return
             }
             2 {
                 debloatWindows
+                Write-Output ""
+                Write-Output "Proceso completado."
+                Read-Host "Presione cualquier tecla para cerrar"
                 return
             }
             3{
                 installPrograms
+                Write-Output ""
+                Write-Output "Proceso completado."
+                Read-Host "Presione cualquier tecla para cerrar"
                 return
             }
             9 {
@@ -247,18 +239,4 @@ if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
     exit
 }
 
-# Imprimir banner
-Write-Output "    _         _     __        ___           _                   "
-Write-Output "   / \  _   _| |_ __\ \      / (_)_ __   __| | _____      _____ "
-Write-Output "  / _ \| | | | __/ _ \ \ /\ / /| | '_ \ / _` |/ _ \ \ /\ / / __|"
-Write-Output " / ___ \ |_| | || (_) \ V  V / | | | | | (_| | (_) \ V  V /\__ \"
-write-Output "/_/   \_\__,_|\__\___/ \_/\_/  |_|_| |_|\__,_|\___/ \_/\_/ |___/"
-Write-Output ""
-Write-Output "by @xabierland"
-Write-Output ""
-Write-Output "Este script quitará todos el bloatware de Windows y instalará los programas QUE YO más uso."
-Write-Output "El script se distribuye bajo la licencia MIT. Puedes modificarlo y distribuirlo libremente pero bajo tu responsabilidad."
-Write-Output ""
-Write-Output "Si estas seguro de continuar presiona cualquier tecla para continuar o Ctrl+C para salir."
-Read-Host
 main
