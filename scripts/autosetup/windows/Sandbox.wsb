@@ -1,0 +1,18 @@
+<Configuration>
+  <Networking>Enable</Networking>
+  <MappedFolders>
+    <MappedFolder>
+      <HostFolder>C:\Users\xabie\Documents\GitHub\dotfiles\scripts\windows</HostFolder>
+      <SandboxFolder>C:\Users\WDAGUtilityAccount\Desktop</SandboxFolder>
+      <ReadOnly>false</ReadOnly>
+    </MappedFolder>
+  </MappedFolders>
+  <AudioInput>Disable</AudioInput>
+  <VideoInput>Enable</VideoInput>
+  <ProtectedClient>Enable</ProtectedClient>
+  <ClipboardRedirection>Enable</ClipboardRedirection>
+  <MemoryInMB>8192</MemoryInMB>
+  <LogonCommand>
+    <Command>powershell.exe -command "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine -Force"</Command>
+  </LogonCommand>
+</Configuration>
