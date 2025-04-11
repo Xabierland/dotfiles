@@ -12,10 +12,12 @@ ENABLE_CORRECTION="true"
 
 # Plugins
 plugins=(
+	extract
 	git
-	zsh-autosuggestions
+	kubectl
 	sudo
 	z
-	)
+	zsh-autosuggestions
+)
 
 source $ZSH/oh-my-zsh.sh
